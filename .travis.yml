@@ -19,7 +19,7 @@ before_script:
   - bundle exec rails db:create RAILS_ENV=test
 language: ruby
 rvm:
-  - 2.6.5
+  - 2.6.6
 script:
   - bundle exec rake assets:precompile RAILS_ENV=test
   - bundle exec rails db:test:load RAILS_ENV=test
