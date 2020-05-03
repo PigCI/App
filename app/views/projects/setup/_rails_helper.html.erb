@@ -1,0 +1,5 @@
+ENV['PIG_CI_KEY'] = '<%= api_key %>'
+require 'pig_ci'
+PigCI.start do |config|
+  config.api_key = ENV['PIG_CI_KEY']
+end

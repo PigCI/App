@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    enums:
+      github_check_suite:
+        conclusions:
+          pending: 'Pending'
+          success: 'Success'
+          failure: 'Failure'
+          neutral: 'Neutral'
+          cancelled: 'Cancelled'
+          timed_out: 'Timed Out'
+          action_required: "Action Required"
+    helpers:
+      github_check_suite:
+        description:
+          pending: "We're awaiting results"
+          success: "Perfect!"
+          failure: "Squeak! Over project limits."
+          neutral: 'Neutral'
+          cancelled: 'Cancelled'
+          timed_out: 'Timed Out'
+          action_required: "PigCI hasn't been setup for this project"

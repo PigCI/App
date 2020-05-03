@@ -1,0 +1,67 @@
+{
+  "action": "member_removed",
+  "membership": {
+    "url": "https://api.github.com/orgs/AreaHQ/memberships/PigCI",
+    "state": "active",
+    "role": "member",
+    "organization_url": "https://api.github.com/orgs/AreaHQ",
+    "user": {
+      "login": "PigCI",
+      "id": 325384,
+      "node_id": "MDQ6VXNlcjMyNTM4NA==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/325384?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/PigCI",
+      "html_url": "https://github.com/PigCI",
+      "followers_url": "https://api.github.com/users/PigCI/followers",
+      "following_url": "https://api.github.com/users/PigCI/following{/other_user}",
+      "gists_url": "https://api.github.com/users/PigCI/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/PigCI/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/PigCI/subscriptions",
+      "organizations_url": "https://api.github.com/users/PigCI/orgs",
+      "repos_url": "https://api.github.com/users/PigCI/repos",
+      "events_url": "https://api.github.com/users/PigCI/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/PigCI/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  "organization": {
+    "login": "AreaHQ",
+    "id": 15365507,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjE1MzY1NTA3",
+    "url": "https://api.github.com/orgs/AreaHQ",
+    "repos_url": "https://api.github.com/orgs/AreaHQ/repos",
+    "events_url": "https://api.github.com/orgs/AreaHQ/events",
+    "hooks_url": "https://api.github.com/orgs/AreaHQ/hooks",
+    "issues_url": "https://api.github.com/orgs/AreaHQ/issues",
+    "members_url": "https://api.github.com/orgs/AreaHQ/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/AreaHQ/public_members{/member}",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/15365507?v=4",
+    "description": "Area is the easiest way to modernise your estate agency! "
+  },
+  "sender": {
+    "login": "shawnzvinis",
+    "id": 5586373,
+    "node_id": "MDQ6VXNlcjU1ODYzNzM=",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5586373?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/shawnzvinis",
+    "html_url": "https://github.com/shawnzvinis",
+    "followers_url": "https://api.github.com/users/shawnzvinis/followers",
+    "following_url": "https://api.github.com/users/shawnzvinis/following{/other_user}",
+    "gists_url": "https://api.github.com/users/shawnzvinis/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/shawnzvinis/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/shawnzvinis/subscriptions",
+    "organizations_url": "https://api.github.com/users/shawnzvinis/orgs",
+    "repos_url": "https://api.github.com/users/shawnzvinis/repos",
+    "events_url": "https://api.github.com/users/shawnzvinis/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/shawnzvinis/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "installation": {
+    "id": 1630066,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9uMTYzMDA2Ng=="
+  }
+}

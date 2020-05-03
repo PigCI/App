@@ -1,0 +1,7 @@
+<h2>Your Settings</h2>
+
+<p>Your account is connected via GitHub. Please uninstall your account via GitHub. The data connected to this GitHub app install will be removed within 24 hours once we receive the uninstall request from GitHub.</p>
+
+<p>
+  <%= link_to 'Uninstall via GitHub', Rails.application.credentials.dig(Rails.env.to_sym, :github, :install_url), class: 'btn btn-sm btn-infer-by-http-verb' %>
+</p>

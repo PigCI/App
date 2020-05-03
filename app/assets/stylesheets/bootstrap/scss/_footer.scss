@@ -1,0 +1,46 @@
+// 
+// Footer
+// 
+
+.pigci-footer {
+    background: $gray;
+    padding: spacer(4) spacer(2);
+
+    .pigci-social-container {
+        > * {margin-right: spacer(1);}
+        > :last-child {margin-right: 0;}
+    }
+
+    .pigci-callout-attr {
+        .pigci-illustration-tinypig {
+            margin-left: 14px; // pig head positioning ¯\_(ツ)_/¯
+            margin-right: spacer(1);
+        }
+    }
+
+    .pigci-section-attr {
+        .pigci-attr {
+            color: $dark;
+            text-decoration: none;
+    
+            &:hover {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+        img {
+            border-radius: 100%;
+            width: spacer(3);
+            height: spacer(3);
+            margin-right: spacer(1);
+            margin-left: spacer(1);
+        }
+        span {
+            -size: 0.875rem;
+          }
+    }
+  
+    @include media-breakpoint-up(md) {
+      padding: spacer(6) $jumbotron-padding spacer(3);
+    }
+}

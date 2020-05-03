@@ -1,0 +1,7 @@
+<div class="border-dashed p-4">
+  <section class="text-center">
+    <h2>Delete <%= @project %></h2>
+    <p>Are you certain you want to delete <%= @project %>? <br />This action is irreversible and will delete all data we have associated to this project.</p>
+    <%= link_to 'Yes, delete this project', project_path(@project), method: :delete, class: 'btn btn-danger' %>
+  </section>
+</div>

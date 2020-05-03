@@ -1,0 +1,49 @@
+// Contents
+//
+// Navbar
+// Navbar brand
+// Navbar nav
+// Navbar text
+// Navbar divider
+// Responsive navbar
+// Navbar position
+// Navbar themes
+
+
+// Navbar brand
+//
+// Used for brand, project, or site names.
+
+.navbar-brand {
+  .pigci-brand {
+    font-family: $font-family-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1;
+  }
+}
+
+
+// Navbar layout for extra small screens
+.pigci-nav-button-container {
+  display: flex;
+  justify-content: flex-end;
+    flex-direction: column;
+
+    & > .btn {
+      margin-bottom: spacer(1);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+  @include media-breakpoint-up(md) {
+  flex-direction: row;
+
+    & > .btn {
+      margin-right: spacer(1);
+      margin-bottom: 0;
+    }
+  }
+}

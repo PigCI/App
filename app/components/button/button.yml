@@ -1,0 +1,29 @@
+:meta: 'Buttons are used by users perform actions, the colour hints at what it will do'
+:stubs: # As many as you need
+  -
+    :class: "btn-infer-by-http-verb"
+    :text: "infer by http verb (Uses HTTP method of form or link to choose colour)"
+  -
+    :class: "btn-primary"
+    :text: "primary"
+  -
+    :class: "btn-secondary"
+    :text: "secondary"
+  -
+    :class: "btn-success"
+    :text: "success"
+  -
+    :class: "btn-info"
+    :text: "info"
+  -
+    :class: "btn-warning"
+    :text: "warning"
+  -
+    :class: "btn-danger"
+    :text: "danger"
+  -
+    :class: "btn-light"
+    :text: "light"
+  -
+    :class: "btn-dark"
+    :text: "dark"

@@ -1,0 +1,4 @@
+en:
+  pundit:
+    performer_not_authorized:
+      alert: "You're not authorized to view that page"

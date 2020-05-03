@@ -1,0 +1,49 @@
+{
+  "name": "Pig CI",
+  "description": "Monitor key stats as part of CI",
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "RAILS_MASTER_KEY": {
+      "required": true
+    },
+    "DURING_RELEASE_RUN_MIGRATIONS": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 0
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis",
+    "papertrail",
+    "sentry"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

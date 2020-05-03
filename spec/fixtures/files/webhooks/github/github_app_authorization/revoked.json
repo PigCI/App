@@ -1,0 +1,23 @@
+{
+  "action": "revoked",
+  "sender": {
+    "login": "PigCI",
+    "id": 325384,
+    "node_id": "MDQ6VXNlcjMyNTM4NA==",
+    "avatar_url": "https://avatars2.githubusercontent.com/u/325384?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/PigCI",
+    "html_url": "https://github.com/PigCI",
+    "followers_url": "https://api.github.com/users/PigCI/followers",
+    "following_url": "https://api.github.com/users/PigCI/following{/other_user}",
+    "gists_url": "https://api.github.com/users/PigCI/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/PigCI/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/PigCI/subscriptions",
+    "organizations_url": "https://api.github.com/users/PigCI/orgs",
+    "repos_url": "https://api.github.com/users/PigCI/repos",
+    "events_url": "https://api.github.com/users/PigCI/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/PigCI/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+}

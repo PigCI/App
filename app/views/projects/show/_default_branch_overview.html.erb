@@ -1,0 +1,55 @@
+<h3 class="mt-4 mb-4 h5">Default Branch Overview</h3>
+
+<div class="card w-100 mt-2">
+  <div class="card-body pb-0">
+    <div class="row">
+      <% @project.lastest_report_collection.reports.decorate.sort_by(&:sort_by_max).uniq(&:profiler).sort_by(&:profiler).each do |report| %>
+        <div class="col-6 col-md-3 mb-2 text-center">
+          <div class="small text-muted"><%= report.profiler %></div>
+          <div class="font-weight-bold"><%= report.max_with_unit %> / <%= report.limit_with_unit %></div>
+        </div>
+      <% end %>
+
+      <div class="col-6 col-md-3 mb-2 text-center">
+        <div class="small text-muted"><%= Report.human_attribute_name(:total_requests) %></div>
+        <div class="font-weight-bold"><%= @project.lastest_report_collection.reports.max_value_for_collection_by_profiler.first.decorate.total_requests %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-img-top charts d-block w-100" style="overflow: hidden; max-height: 150px;" id="branch-overview-project-chart-<%= @project.id %>" data-turbolinks-permanent="true">
+    <%= area_chart(
+      url_for([@project, { branch: @project.default_branch, format: :json }]),
+      {
+        legend: false,
+        discrete: false,
+        height: 100,
+        id: "chart-default-branch-#{@project.slug}",
+        library: {
+          responsive: true,
+          tooltips: {
+            enabled: true,
+            mode: 'index',
+            position: 'nearest'
+          },
+          scales: {
+            yAxes: [{
+              stacked: false,
+              ticks: { display: false, autoSkip: false, beginAtZero: false },
+              gridLines: { display: false, drawBorder: false },
+            }],
+            xAxes: [{
+              stacked: true,
+              ticks: { display: false, autoSkip: false, beginAtZero: true },
+              gridLines: { display: false, drawBorder: false },
+              type: 'category'
+            }],
+          },
+          layout: {
+            padding: { top: -10, right: 0, bottom: -10, left: -10 },
+          }
+        }}
+    )%>
+  </div>
+</div>
+

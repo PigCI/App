@@ -1,0 +1,20 @@
+[
+  {
+    "key": "GET Admin::AdminUsersController#index{format:html}",
+    "max": 245436416,
+    "min": 245436416,
+    "mean": 245436416,
+    "total": 245436416,
+    "number_of_requests": 1,
+    "max_change_percentage": "0.0"
+  },
+  {
+    "key": "GET Admin::AdminUsersController#edit{format:html}",
+    "max": 243236864,
+    "min": 243236864,
+    "mean": 243236864,
+    "total": 243236864,
+    "number_of_requests": 1,
+    "max_change_percentage": "0.0"
+  }
+]

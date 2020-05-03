@@ -1,0 +1,17 @@
+<div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+  <div class="card w-100 mb-4">
+    <div class="card-header">
+      <%= link_to github_repository.full_name, projects_path(github_repository_id: github_repository.id), method: :post, class: 'h5 mb-0' %>
+
+      <div class="badge badge-pill badge-sm <%= github_repository.conclusion_badge_status %> mt-1 float-right border border-white">&nbsp;</div>
+    </div>
+    <div class="card-body text-center">
+      <p class="card-text">No data yet 🐷</p>
+      <p class="card-text">Once we start receiving data, you'll see statistics here.</p>
+    </div>
+    <div class="card-footer text-center">
+      <%= link_to 'Setup', projects_path(github_repository_id: github_repository.id), method: :post, class: 'card-link' %>
+    </div>
+  </div>
+</div>
+

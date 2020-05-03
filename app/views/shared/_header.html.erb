@@ -1,0 +1,10 @@
+<h1 class="sr-only"><%= title %></h1>
+
+<div class="container pb-2 pt-3">
+  <% if current_user %>
+    <%= render 'shared/header/navbar_user' %>
+  <% else %>
+    <%= render 'shared/header/navbar_guest' %>
+  <% end %>
+  </nav>
+</div>

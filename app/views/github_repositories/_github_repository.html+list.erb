@@ -1,0 +1,11 @@
+<tr>
+  <td scope="row"><%= github_repository %></td>
+  <td>
+    <% if github_repository.project.present? %>
+      <%= link_to 'View', project_path(github_repository.project), class: 'btn btn-sm btn-infer-by-http-verb' %>
+    <% else %>
+      <%= link_to 'Setup', projects_path(github_repository_id: github_repository.id), method: :post, class: 'btn btn-sm btn-infer-by-http-verb' %>
+    <% end %>
+  </td>
+</tr>
+

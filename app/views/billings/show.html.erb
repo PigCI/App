@@ -1,0 +1,5 @@
+<div class="border-dashed p-4 text-center">
+  <h2>Your billing is managed by GitHub</h2>
+  <p>As you installed this via GitHub, all billing (and your current plan) is managed via their website.</p>
+  <%= link_to 'Manage your billing on GitHub', Rails.application.credentials.dig(Rails.env.to_sym, :github, :marketplace_url), class: 'btn btn-infer-by-http-verb' %>
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <%= display_meta_tags title: breadcrumbs_from_croutons.first&.label %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="turbolinks-cache-control" content="no-cache">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Eczar:500|Source+Sans+Pro&display=swap',
+      media: 'all',
+      'data-turbolinks-track': 'reload' %>
+
+    <% if ENV['SENTRY_DSN'].present? %>
+      <meta name="x-sentry-dsn" content="<%= ENV['SENTRY_DSN'] %>">
+      <meta name="x-sentry-release" content="<%= Raven.configuration.release %>">
+      <meta name="x-sentry-environment" content="<%= Raven.configuration.current_environment %>">
+      <meta name="x-sentry-user-id" content="<%= Raven.context.user.dig(:id) %>">
+    <% end %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+
+    <% ['180x180', '152x152', '144x144', '72x72'].each do |favicon_size| %>
+      <link rel="apple-touch-icon" sizes="<%= favicon_size %>" href="<%= image_path("apple-touch-icon-#{favicon_size}-precomposed.png") %>" />
+    <% end %>
+    <link rel="apple-touch-icon" href="<%= image_path("apple-touch-icon-precomposed.png") %>" />
+    <link rel="shortcut icon" href="<%= image_path("favicon.png") %>" />
+    <link rel="icon" type="image/ico" href="<%= image_path("favicon.ico") %>" />
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <div class="bg-white">
+      <% content_for :announcements do %>
+        <div class="alert alert--rails-upvote text-center fade show" role="alert">
+          <div><strong>GitHub Integration Deprecation Notice</strong></div>
+          <p>PigCI will be removing its GitHub Integration at the end of April 2020.</p>
+          <div>
+            <%= link_to 'Read the full announcement', github_integration_deprecation_notice_path, class: 'btn btn-sm btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+      <%= content_for(:announcements) %>
+      <%= render_flashes %>
+
+      <%= render 'shared/header' %>
+      <main class="container pt-2 pb-3" role="main">
+        <%= content_for?(:content) ? yield(:content) : yield %> 
+      </main>
+    </div>
+    <%= render 'shared/footer' %>
+  </body>
+</html>

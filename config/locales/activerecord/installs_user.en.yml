@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    enums:
+      installs_user:
+        roles:
+          owner: 'Owner'
+          contributor: 'Contributor'

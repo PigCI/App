@@ -1,0 +1,54 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+.btn {
+  font-family: $font-family-monospace;
+  color: $body-color;
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+.btn-infer-by-http-verb {
+  @extend .btn-primary;
+}
+
+[method='post'] .btn-infer-by-http-verb,
+[method='post'].btn-infer-by-http-verb{
+  @extend .btn-primary;
+}
+
+[method='delete'] .btn-infer-by-http-verb,
+[method='delete'].btn-infer-by-http-verb{
+  @extend .btn-danger;
+}

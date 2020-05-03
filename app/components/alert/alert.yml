@@ -1,0 +1,32 @@
+:meta: 'Flashes are used to inform users of good or bad news'
+:stubs: # As many as you need
+  -
+    :class: "alert--rails-alert"
+    :text: "A sample alert"
+  -
+    :class: "alert--rails-notice"
+    :text: "A sample notice"
+  -
+    :class: "alert-primary"
+    :text: "primary"
+  -
+    :class: "alert-secondary"
+    :text: "secondary"
+  -
+    :class: "alert-success"
+    :text: "success"
+  -
+    :class: "alert-info"
+    :text: "info"
+  -
+    :class: "alert-warning"
+    :text: "warning"
+  -
+    :class: "alert-danger"
+    :text: "danger"
+  -
+    :class: "alert-light"
+    :text: "light"
+  -
+    :class: "alert-dark"
+    :text: "dark"

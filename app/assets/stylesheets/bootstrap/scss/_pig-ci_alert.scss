@@ -1,0 +1,11 @@
+.alert--rails-alert {
+  @extend .alert-primary;
+}
+
+.alert--rails-notice {
+  @extend .alert-success;
+}
+
+.alert--rails-upvote {
+  @extend .alert-secondary;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t('mountain_view.layout.styleguide_title') %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'mountain_view/styleguide', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'mountain_view/styleguide', 'data-turbolinks-track' => true %>
+
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Eczar:500|Source+Sans+Pro&display=swap',
+    media: 'all',
+    'data-turbolinks-track': 'reload' %>
+
+  <% if ENV['SENTRY_DSN'].present? %>
+    <meta name="x-sentry-dsn" content="<%= ENV['SENTRY_DSN'] %>">
+    <meta name="x-sentry-release" content="<%= Raven.configuration.release %>">
+    <meta name="x-sentry-environment" content="<%= Raven.configuration.current_environment %>">
+    <meta name="x-sentry-user-id" content="<%= Raven.context.user.dig(:id) %>">
+  <% end %>
+
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= action_cable_meta_tag %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="mv-header">
+    <div class="mv-header__logo">
+      <% if Rails.application.routes.url_helpers.respond_to?("mv_style_guide_path") %>
+        <%= link_to t('mountain_view.layout.styleguide_title'), mv_style_guide.root_url%>
+      <% else %>
+        <%= t('mountain_view.layout.styleguide_title') %>
+      <% end %>
+    </div>
+  </div>
+  <div class="mv-flex-wrapper">
+    <div class="mv-sidebar">
+      <% if extra_pages.any? %>
+        <h3><%= t('mountain_view.layout.extra_pages') %></h3>
+        <ul>
+          <%- extra_pages.each do |extra_page| %>
+            <li>
+              <%= link_to_unless_current prettify_word(extra_page), extra_pages_path(extra_page) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+      <h3><%= t('mountain_view.layout.components') %></h3>
+      <ul>
+        <%- mv_components.each do |component| %>
+          <li>
+            <%= link_to_unless_current component.title, styleguide_path(id: component.name) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="mv-main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

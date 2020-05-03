@@ -1,0 +1,16 @@
+<div class="border-dashed p-4 text-center">
+  <% if params[:setup_action] == 'update' %>
+    <h2>We're processing your change</h2>
+    <p>We're just waiting for GitHub to confirm your changes with us. This normally takes just a few seconds.</p>
+    <%= link_to 'Ready to continue?', projects_path, class: 'btn btn-outline-primary' %>
+  <% elsif params[:setup_action] == 'no_install' %>
+    <h2>Install our GitHub app</h2>
+    <p>Before you start, you'll need to install our GitHub App to allow us to be add our status check to PRs.</p>
+    <%= link_to 'Install GitHub App', Rails.application.credentials.dig(Rails.env.to_sym, :github, :install_url), class: 'btn btn-infer-by-http-verb' %>
+  <% else %>
+    <h2>Glad to have you onboard!</h2>
+    <p>Thank you for installing PigCI!</p>
+    <p>We're just creating your account. This normally takes just a few seconds.</p>
+    <%= link_to 'Ready to setup projects?', projects_path, class: 'btn btn-outline-primary' %>
+  <% end %>
+</div>

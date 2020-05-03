@@ -1,0 +1,13 @@
+.jumbotron {
+  padding: spacer(4) spacer(2);
+
+  @include media-breakpoint-up(md) {
+    padding: $section-padding-top $jumbotron-padding $section-padding-bottom $jumbotron-padding;
+  }
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  @include border-radius(0);
+}

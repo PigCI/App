@@ -1,0 +1,56 @@
+//
+// Custom Pricing Table
+//
+.pigci-card-button {
+  height: 3.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.pigci-list-pricing {
+  display: inline-block;
+  text-align: left;
+  list-style-type: disc;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 20px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+
+  li {
+    padding-bottom: spacer(1);
+    &:last-child {padding-bottom: 0;}
+  }
+}
+
+.pigci-card-sub {
+  border-color: $secondary;
+  border-width: 2px;
+}
+
+.pigci-card-primary {
+  border-color: $primary;
+  border-width: 2px;
+}
+
+.card-deck.card-deck--pricing {
+  display: flex;
+  flex-direction: column;
+
+  > .card {
+    margin-bottom: spacer(2);
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    
+    .pigci-card-sub {
+      margin-top: spacer(4);
+    }
+    .pigci-card-primary {
+      margin-bottom: spacer(4);
+    }
+  }
+
+}

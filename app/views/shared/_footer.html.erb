@@ -1,0 +1,75 @@
+<div class="pigci-footer">
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-md-3">
+        <div class="h5">Product</div>
+        
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Pricing', root_path(anchor: 'pricing') %>
+          </li>
+          <li>
+            <%= link_to 'Add via GitHub', Rails.application.credentials.dig(Rails.env.to_sym, :github, :install_url), target: '_blank', rel: 'noopener' %>
+          </li>
+          <li>
+            <%= link_to 'Ruby on Rails Gem', 'https://github.com/PigCI/pig-ci-rails', target: '_blank', rel: 'noopener' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <div class="h5">Product</div>
+        
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'API', api_path %>
+          </li>
+          <li>
+            <%= link_to 'Contact Us', contact_us_path %>
+          </li>
+          <li>
+            <%= link_to 'Roadmap', roadmap_path %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <div class="h5">Social</div>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'GitHub', 'https://github.com/PigCI' %>
+          </li>
+          <li>
+            <%= link_to 'Twitter', 'https://twitter.com/pig_ci' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <div class="h5">Legal</div>
+        
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Privacy Policy', privacy_policy_path %>
+          </li>
+          <li>
+            <%= link_to 'Terms of Service', terms_of_service_path %>
+          </li>
+          <li>
+            <%= link_to 'Cookie Policy', cookie_policy_path %>
+          </li>
+          <li>
+            <%= link_to 'Subprocessors', subprocessors_path %>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-3 small">
+      <p>PigCI was created by <%= link_to 'Mike Rogers', 'https://mikerogers.io/', target: '_blank', rel: 'noopener' %> &copy; PigCI <%= Time.zone.today.year %></p>
+    </div>
+  </div>
+</div>

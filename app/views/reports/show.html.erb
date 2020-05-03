@@ -1,0 +1,63 @@
+<div class="row mb-3">
+  <div class="col-4 text-center">
+    <%= render_stat_for(@report_collection, :last_analysed_at) %>
+  </div>
+  <div class="col-4 text-center">
+    <%= render_stat_for(@report, :change_percentage_with_unit) %>
+  </div>
+  <div class="col-4 text-center">
+    <%= render_stat_for(@report, :conclusion) %>
+  </div>
+</div>
+
+<div class="charts mb-5 w-100" id="report-chart-<%= @report.id %>" data-turbolinks-permanent="true" style="overflow: hidden; max-height: 150px;">
+  <%= column_chart(project_report_collection_report_path(@report.project, @report.report_collection, @report, { format: :json }),
+    legend: false, discrete: false, height: 200, suffix: @report.unit,
+    library: {
+      responsive: true,
+      tooltips: {
+        enabled: true,
+        mode: 'index',
+        position: 'nearest'
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: { display: true, autoSkip: false, beginAtZero: true },
+          gridLines: { display: true },
+        }],
+        xAxes: [{
+          stacked: true,
+          ticks: { display: false, autoSkip: false, beginAtZero: true },
+          gridLines: { display: true },
+        }],
+      },
+      layout: {
+        padding: { top: 0, right: 0, bottom: 0, left: 0 },
+      }
+    }
+  )%>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-sort table-striped" data-controller="table-sort">
+    <thead>
+      <tr>
+        <th scope="col"><%= Report.human_attribute_name(:key) %></th>
+        <th scope="col"><%= Report.human_attribute_name(:max) %></th>
+        <th scope="col"><%= Report.human_attribute_name(:min) %></th>
+        <th scope="col"><%= Report.human_attribute_name(:number_of_requests) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% ReportRowDecorator.decorate_collection(@report.data, context: { profiler: @report.object.profiler }).each do |row| %>
+        <tr>
+          <th scope="row"><%= row.key %></th>
+          <td><%= row.max %><%= @report.unit %></td>
+          <td><%= row.min %><%= @report.unit %></td>
+          <td><%= row.number_of_requests %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

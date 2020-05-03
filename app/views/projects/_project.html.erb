@@ -1,0 +1,64 @@
+<div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch" data-controller="projects" data-projects-id="<%= project.id %>">
+  <div class="card w-100 mb-4" data-target="projects.body">
+    <div class="card-header">
+      <%= link_to project.full_name, project_path(project), class: 'h5 mb-0' %>
+
+      <div class="badge badge-pill badge-sm <%= project.conclusion_badge_status %> mt-1 float-right border border-white">&nbsp;</div>
+    </div>
+    <% if project.lastest_report_collection? %>
+      <div class="card-body pb-0">
+        <div class="row">
+          <% project.lastest_report_collection.reports.max_value_for_collection_by_profiler.collect(&:decorate).each do |report| %>
+            <div class="col-6 mb-2 text-center">
+              <div class="small text-muted"><%= report.profiler %></div>
+              <div class="font-weight-bold"><%= report.max_with_unit %></div>
+            </div>
+          <% end %>
+
+          <div class="col-6 mb-2 text-center">
+            <div class="small text-muted"><%= Report.human_attribute_name(:total_requests) %></div>
+            <div class="font-weight-bold"><%= project.lastest_report_collection.reports.max_value_for_collection_by_profiler.first.decorate.total_requests %></div>
+          </div>
+        </div>
+      </div>
+
+      <%= link_to url_for(project), class: 'card-img-top charts d-block w-100', style: 'overflow: hidden; max-height: 150px;', id: "partial-project-chart-#{project.id}", 'data-turbolinks-permanent': true do %>
+        <%= area_chart url_for([project, { format: :json }]), legend: false, discrete: false, height: 100,
+          library: {
+          responsive: true,
+          tooltips: {
+            enabled: false,
+          },
+          scales: {
+            yAxes: [{
+              stacked: false,
+              ticks: { display: false, autoSkip: false, beginAtZero: false },
+              gridLines: { display: false, drawBorder: false },
+            }],
+            xAxes: [{
+              stacked: true,
+              ticks: { display: false, autoSkip: false, beginAtZero: true },
+              gridLines: { display: false, drawBorder: false },
+              type: 'time',
+              distribution: 'series'
+            }],
+          },
+          layout: {
+            padding: { top: 0, right: 0, bottom: -10, left: -10 },
+          }
+        } %>
+      <% end %>
+      <div class="card-footer text-center">
+        <%= link_to 'View', project_path(project), class: 'card-link' %>
+      </div>
+    <% else %>
+      <div class="card-body text-center">
+        <p class="card-text">No data yet 🐷</p>
+        <p class="card-text">Once we start receiving data, you'll see statistics here.</p>
+      </div>
+      <div class="card-footer text-center">
+        <%= link_to 'Setup', project_path(project), class: 'card-link' %>
+      </div>
+    <% end %>
+  </div>
+</div>

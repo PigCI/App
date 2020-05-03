@@ -1,0 +1,5 @@
+---
+Daily Usage Summary:
+  :cron: 0 7 * * *
+  :class: Slack::UsageSummaryJob
+  :queue: slack

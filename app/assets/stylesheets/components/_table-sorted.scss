@@ -1,0 +1,32 @@
+.table.table-sort {
+  .tablesorter-header-inner {
+    display: inline;
+  }
+
+  thead {
+    th {
+      cursor: n-resize;
+      &:after {
+        content: " ";
+        display: inline-block;
+        padding-left: 18px;
+      }
+    }
+
+    th[aria-sort=ascending]{
+      cursor: s-resize;
+      &:after {
+        content: " \2191";
+        padding-left: 6px;
+      }
+    }
+
+    th[aria-sort=descending]{
+      cursor: n-resize;
+      &:after {
+        content: " \2193";
+        padding-left: 6px;
+      }
+    }
+  }
+}

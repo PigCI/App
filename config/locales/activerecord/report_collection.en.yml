@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      report_collection:
+        commit_sha1: 'Commit SHA'
+        last_analysed_at: 'Analysed'
+        branch: 'Branch'

@@ -1,0 +1,28 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <h2>Comparison Settings</h2>
+    <%= f.input :default_branch %>
+  </div>
+
+  <div class="form-inputs mt-4">
+    <h2>CI Settings</h2>
+
+    <%= f.input :api_key, readonly: true, input_html: { name: nil } %>
+  </div>
+
+  <div class="form-inputs mt-4">
+    <h2>PR Settings</h2>
+    <p>PigCI can pass/fail PRs based on metrics. You will need to tweak these based on your needs.</p>
+
+    <%= f.input :memory_max, wrapper: :input_group, append: 'mb' %>
+    <%= f.input :database_request_max %>
+    <%= f.input :request_time_max, wrapper: :input_group, append: 'ms'  %>
+  </div>
+
+  <div class="form-actions mt-3">
+    <%= f.button :submit %>
+  </div>
+<% end %>

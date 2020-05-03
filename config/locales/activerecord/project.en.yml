@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    enums:
+      project:
+    attributes:
+      project:
+        api_key: 'API Key'
+        memory_max: 'Max memory (in megabytes)'
+        database_request_max: 'Max database Requests'
+        request_time_max: 'Max request time (in milliseconds)'

@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    enums:
+      report:
+        profilers:
+          memory: 'Memory'
+          database_request: 'Database Requests'
+          request_time: 'Request Time'
+    attributes:
+      report:
+        total_requests: 'Requests'
+        number_of_requests: 'Requests'
+        conclusion: 'Conclusion'
+        change_percentage: 'Change %'
+        max_with_unit: Max
+        min_with_unit: Min
+        change_percentage_with_unit: 'Change %'

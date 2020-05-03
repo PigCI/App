@@ -1,0 +1,5 @@
+en:
+  meta_tags:
+    setup/githubs:
+      show:
+        title: 'Processing GitHub Request'

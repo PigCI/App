@@ -1,0 +1,20 @@
+<div class="row mb-4">
+  <div class="col-4 text-center">
+    <%= render_stat_for(@report_collection, :last_analysed_at) %>
+  </div>
+  <div class="col-4 text-center">
+    <%= render_stat_for(@report_collection, :branch) %>
+  </div>
+  <div class="col-4 text-center">
+    <%= render_stat_for(@report_collection, :conclusion) %>
+  </div>
+</div>
+
+<%  @report_collection.reports.newest.by_profiler_name.group_by { |r| r.created_at.to_s }.each do |created_at, reports_grouped| %>
+  <h2 class="text-muted h5">Received: <%= l Time.parse(created_at), format: :long %></h2>
+  <div class="row">
+    <% reports_grouped.each do |report| %>
+      <%= render report.decorate %>
+    <% end %>
+  </div>
+<% end %>

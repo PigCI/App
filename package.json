@@ -1,0 +1,25 @@
+{
+  "name": "PigCIApp",
+  "private": true,
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0-alpha",
+    "@rails/activestorage": "^6.0.0-alpha",
+    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/webpacker": "^4.0.6",
+    "@sentry/browser": "^5.7.1",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.9.1",
+    "chartkick": "^3.1.0",
+    "jquery": "^3.4.1",
+    "jquery-tablesort": "^0.0.11",
+    "moment": "^2.24.0",
+    "popper.js": "^1.15.0",
+    "stimulus": "^1.1.1",
+    "tablesorter": "^2.31.1",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.2.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.9.0"
+  }
+}

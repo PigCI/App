@@ -1,0 +1,16 @@
+en:
+  meta_tags:
+    landing:
+      index:
+        title: 'Rails Performance Monitoring as part of CI'
+        description: "Track your apps performance via your Test Suite & stop slow downs before they're deployed"
+        keywords: 'PigCI, CI Tools, Monitor memory, performance tracking, Ruby on Rails'
+
+      api:
+        title: 'API Documentation'
+
+      contact_us:
+        title: 'Contact Us'
+
+      roadmap:
+        title: 'Roadmap'

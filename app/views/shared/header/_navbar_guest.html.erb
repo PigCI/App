@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light px-0">
+  <%= render 'shared/header/brand' %>
+
+  <div class="navbar-nav ml-auto">
+    <div class="pigci-nav-button-container">
+      <%= link_to 'Get Started', Rails.application.credentials.dig(Rails.env.to_sym, :github, :install_url), class: 'btn btn-primary btn-sm' %>
+      <%= link_to 'Log In', new_user_session_path, class: 'btn btn-outline-primary btn-sm' %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+<% if current_user.installs.empty? %>
+  <div class="border-dashed p-4 text-center">
+    <h2>Not seeing your Repository?</h2>
+    <p>You need to install our GitHub App onto your GitHub Account.</p>
+    <%= link_to 'Install GitHub App', Rails.application.credentials.dig(Rails.env.to_sym, :github, :install_url), class: 'btn btn-infer-by-http-verb' %>
+  </div>
+<% else %>
+  <div class="border-dashed p-4 text-center">
+    <h2>Not seeing a repository?</h2>
+    <p>You may need to adjust our Repository access on GitHub before you can start using it with PigCI.</p>
+    <%= link_to 'Update GitHub App', Rails.application.credentials.dig(Rails.env.to_sym, :github, :install_url), class: 'btn btn-infer-by-http-verb' %>
+  </div>
+<% end %>
+
+<% if current_user.github_repositories.any? %>
+  <div class="table-responsive mt-3">
+    <table class="table table-sort table-striped" data-controller="table-sort">
+      <thead>
+        <tr>
+          <th scope="col">Repository</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.github_repositories.where(project: nil).decorate.each do |github_repository| %>
+          <%= render partial: github_repository.to_partial_path, variants: [:list], locals: { github_repository: github_repository } %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

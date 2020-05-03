@@ -1,0 +1,11 @@
+en:
+  meta_tags:
+    projects:
+      show:
+        title: '%{project}'
+      edit:
+        title: 'Edit %{project}'
+      setup:
+        title: 'Setup %{project}'
+      delete:
+        title: 'Delete %{project}'

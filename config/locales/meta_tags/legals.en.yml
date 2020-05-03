@@ -1,0 +1,14 @@
+en:
+  meta_tags:
+    legals:
+      privacy_policy:
+        title: 'Privacy Policy'
+      terms_of_service:
+        title: 'Terms of Service'
+      cookie_policy:
+        title: 'Cookie Policy'
+      subprocessors:
+        title: 'Subprocessors'
+      github_integration_deprecation_notice:
+        title: 'GitHub Integration Deprecation Notice'
+        description: "The GitHub Marketplace isn't verifying new apps, so I'm removing them & simplifying the gem."

@@ -1,0 +1,11 @@
+<% content_for(:content) do %>
+  <nav aria-label="breadcrumb" class="pb-2">
+    <%= render 'breadcrumbs/breadcrumbs', breadcrumbs: breadcrumbs_from_croutons %>
+  </nav>
+
+  <h1 class="sr-only"><%= title %></h1>
+
+  <%= yield %>
+<% end %>
+
+<%= render template: 'layouts/application' %>

@@ -1,0 +1,23 @@
+<ul class="list-unstyled list-inline border rounded d-flex justify-content-between d-flex align-items-stretch flex-wrap">
+  <li class="list-inline-item py-2 px-3">
+    <strong><%= Project.human_attribute_name(:default_branch) %>:</strong> <%= @project.default_branch %>
+  </li>
+  <li class="list-inline-item py-2 px-3">
+    <strong><%= Project.human_attribute_name(:api_key) %>:</strong>
+    <%= link_to setup_project_path(@project) do %>
+      <code><%= @project.api_key %></code>
+    <% end %>
+  </li>
+  <li class="list-inline-item py-2 px-3">
+    <%= link_to 'Settings', edit_project_path(@project) %>
+  </li>
+</ul>
+
+<% if @project.report_collections.any? %>
+  <%= render 'projects/show/default_branch_overview' if @project.lastest_report_collection? %>
+  
+  <h3 class="mt-3 h5" id="report-collections">Recent Results</h3>
+  <%= render 'projects/show/recent_results' %>
+<% else %>
+  <%= render 'projects/show/first_time_setup' %>
+<% end %>

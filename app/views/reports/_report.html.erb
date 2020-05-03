@@ -1,0 +1,29 @@
+<div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+  <div class="card w-100 mb-4">
+    <div class="card-header">
+      <%= link_to report.profiler, project_report_collection_report_path(report.project, report.report_collection, report), class: 'h5 mb-0' %>
+      <div class="badge badge-pill badge-sm <%= report.change_percentage_badge_status %> mt-1 float-right border border-white">&nbsp;</div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6 text-center">
+          <%= render_stat_for(report, :max_with_unit) %>
+        </div>
+        <div class="col-6 text-center">
+          <%= render_stat_for(report, :min_with_unit) %>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-6 text-center">
+          <%= render_stat_for(report, :total_requests) %>
+        </div>
+        <div class="col-6 text-center">
+          <%= render_stat_for(report, :change_percentage_with_unit) %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <%= link_to 'View', project_report_collection_report_path(report.project, report.report_collection, report), class: 'card-link' %>
+    </div>
+  </div>
+</div>

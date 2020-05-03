@@ -1,0 +1,9 @@
+en:
+  simple_form:
+    hints:
+      project:
+        default_branch: 'The branch used to compare PRs against.'
+        api_key: 'Used with our Ruby Gem to report metrics back for analysis.'
+        memory_max: 'If your PR goes over this memory limit, the PR will fail'
+        database_request_max: 'If your PR makes more then this many database requests per a request, the PR will fail.'
+        request_time_max: 'If your PR makes a request that takes longer then this number, the PR will fail.'

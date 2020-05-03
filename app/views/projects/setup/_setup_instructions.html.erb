@@ -1,0 +1,15 @@
+<section class="mb-3">
+  <h3>Add the gem to your Gemfile</h3>
+  <p>We use a Ruby gem to collect metrics about your app while the test suite runs.</p>
+
+  <p>To add the <%= link_to 'pig-ci-rails', 'https://github.com/PigCI/pig-ci-rails', target: '_blank' %> gem, by adding the following to your <code>Gemfile</code> &amp; run <code>bundle install</code>:</p>
+
+  <%= render_code_sample('projects/setup/gemfile') %>
+</section>
+
+<section class="mb-3">
+  <h3>Update your rails_helper.rb</h3>
+  <p>Open your <code>spec/rails_helper.rb</code> file, and this line before your <code>RSpec.configure</code> line:</p>
+
+  <%= render_code_sample('projects/setup/rails_helper', locals: { api_key: @project.api_key }) %>
+</section>

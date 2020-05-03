@@ -1,0 +1,13 @@
+<ol class="breadcrumb">
+  <% breadcrumbs.each do |breadcrumb| %>
+    <% if breadcrumb.link? %>
+      <li class="breadcrumb-item">
+        <%= link_to breadcrumb.label, breadcrumb.url %>
+      </li>
+    <% else %>
+      <li class="breadcrumb-item active" aria-current="page">
+        <%= breadcrumb.label %>
+      </li>
+    <% end %>
+  <% end %>
+</ol>

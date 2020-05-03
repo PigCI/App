@@ -1,0 +1,81 @@
+{
+  "action": "added",
+  "installation": {
+    "id": 875537,
+    "account": {
+      "login": "PigCI",
+      "id": 325384,
+      "node_id": "MDQ6VXNlcjMyNTM4NA==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/325384?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/PigCI",
+      "html_url": "https://github.com/PigCI",
+      "followers_url": "https://api.github.com/users/PigCI/followers",
+      "following_url": "https://api.github.com/users/PigCI/following{/other_user}",
+      "gists_url": "https://api.github.com/users/PigCI/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/PigCI/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/PigCI/subscriptions",
+      "organizations_url": "https://api.github.com/users/PigCI/orgs",
+      "repos_url": "https://api.github.com/users/PigCI/repos",
+      "events_url": "https://api.github.com/users/PigCI/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/PigCI/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "repository_selection": "selected",
+    "access_tokens_url": "https://api.github.com/app/installations/875537/access_tokens",
+    "repositories_url": "https://api.github.com/installation/repositories",
+    "html_url": "https://github.com/settings/installations/875537",
+    "app_id": 22929,
+    "target_id": 325384,
+    "target_type": "User",
+    "permissions": {
+      "checks": "write",
+      "statuses": "write",
+      "contents": "read",
+      "metadata": "read",
+      "repository_projects": "read"
+    },
+    "events": [
+      "check_run",
+      "check_suite",
+      "status"
+    ],
+    "created_at": 1556461256,
+    "updated_at": 1556461256,
+    "single_file_name": null
+  },
+  "repository_selection": "selected",
+  "repositories_added": [
+    {
+      "id": 146505263,
+      "node_id": "MDEwOlJlcG9zaXRvcnkxNDY1MDUyNjM=",
+      "name": "App",
+      "full_name": "PigCI/App",
+      "private": true
+    }
+  ],
+  "repositories_removed": [
+
+  ],
+  "sender": {
+    "login": "PigCI",
+    "id": 325384,
+    "node_id": "MDQ6VXNlcjMyNTM4NA==",
+    "avatar_url": "https://avatars2.githubusercontent.com/u/325384?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/PigCI",
+    "html_url": "https://github.com/PigCI",
+    "followers_url": "https://api.github.com/users/PigCI/followers",
+    "following_url": "https://api.github.com/users/PigCI/following{/other_user}",
+    "gists_url": "https://api.github.com/users/PigCI/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/PigCI/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/PigCI/subscriptions",
+    "organizations_url": "https://api.github.com/users/PigCI/orgs",
+    "repos_url": "https://api.github.com/users/PigCI/repos",
+    "events_url": "https://api.github.com/users/PigCI/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/PigCI/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+}

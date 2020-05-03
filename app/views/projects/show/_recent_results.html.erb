@@ -1,0 +1,40 @@
+<div class="table-responsive mt-3 mb-3" id="projects-recent-results">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <% Report.profilers.keys.sort.each do |profiler| %>
+          <th scope="col"><%= Report.human_enum_name(:profiler, profiler) %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @report_collections.decorate.each do |report_collection| %>
+        <tr>
+          <td scope="row">
+            <div>
+              <strong><%= report_collection.branch %></strong>
+              <%= link_to project_report_collection_path(report_collection.project, report_collection) do %>
+                <small class="text-muted"><%= report_collection.commit_sha1 %></small>
+              <% end %>
+            </div>
+            <div class="small text-muted"><%= report_collection.created_at %></div>
+          </td>
+          <% Report.profilers.keys.sort.each do |profiler| %>
+            <td>
+              <% report = report_collection.reports.max_value_for_collection_by_profiler.find { |report| report.profiler == profiler  }&.decorate %>
+              <% if report.present? %>
+                <%= link_to ( report.max_with_unit ), project_report_collection_report_path(@project, report_collection, report), class: 'text-dark' %>
+                <span class="badge <%= report.change_percentage_badge_status %> ml-2"><%= report.change_percentage_with_unit %></span>
+              <% else %>
+                -
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= paginate @report_collections, theme: 'twitter-bootstrap-4', params: { anchor: 'report-collections' }, pagination_class: 'justify-content-center' %>

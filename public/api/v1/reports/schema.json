@@ -1,0 +1,152 @@
+{
+  "$id": "https://pigci.com/api/v1/reports/schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "The PigCI Reports Schema",
+  "definitions": {
+    "profiler_row": {
+      "type": "object",
+      "required": [
+        "key",
+        "max",
+        "min",
+        "mean",
+        "total",
+        "number_of_requests",
+        "max_change_percentage"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^(.*)$",
+          "examples": [
+            "POST Api::V1::ReportsController#create{format:html}"
+          ]
+        },
+        "max": {
+          "type": "integer",
+          "examples": [
+            1
+          ]
+        },
+        "min": {
+          "type": "integer",
+          "examples": [
+            1
+          ]
+        },
+        "mean": {
+          "type": "integer",
+          "examples": [
+            1
+          ]
+        },
+        "total": {
+          "type": "integer",
+          "examples": [
+            1
+          ]
+        },
+        "number_of_requests": {
+          "type": "integer",
+          "examples": [
+            1
+          ]
+        },
+        "max_change_percentage": {
+          "type": "float",
+          "examples": [
+            "0.0"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "library",
+    "library_version",
+    "commit_sha1",
+    "head_branch",
+    "reports"
+  ],
+  "properties": {
+    "library": {
+      "$id": "#/properties/library",
+      "type": "string",
+      "title": "Library which performed the analysis",
+      "default": "",
+      "examples": [
+        "pig-ci-rails"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "library_version": {
+      "$id": "#/properties/library_version",
+      "type": "string",
+      "title": "Version number of library",
+      "default": "",
+      "examples": [
+        "1.0.0"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "commit_sha1": {
+      "$id": "#/properties/commit_sha1",
+      "type": "string",
+      "title": "Git Commit SHA1",
+      "default": "",
+      "examples": [
+        "test_sha1",
+        "0a4f7163d34501d09caa080ee266f1b798fc4efe"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "head_branch": {
+      "$id": "#/properties/head_branch",
+      "type": "string",
+      "title": "Branch metrics are coming from",
+      "default": "",
+      "examples": [
+        "master",
+        "test/branch"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "reports": {
+      "$id": "#/properties/reports",
+      "type": "array",
+      "title": "The Reports Schema",
+      "items": {
+        "$id": "#/properties/reports/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "profiler",
+          "data"
+        ],
+        "properties": {
+          "profiler": {
+            "$id": "#/properties/reports/items/properties/profiler",
+            "type": "string",
+            "title": "The Profiler Schema",
+            "default": "",
+            "examples": [
+              "memory",
+              "request_time",
+              "database_request"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "data": {
+            "$id": "#/properties/reports/items/properties/data",
+            "type": "array",
+            "title": "Reports for the profiler",
+            "items": {
+              "$ref": "#/definitions/profiler_row"
+            }
+          }
+        }
+      }
+    }
+  }
+}

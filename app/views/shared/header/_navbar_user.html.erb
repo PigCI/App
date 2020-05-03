@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light px-0">
+  <%= render 'shared/header/brand' %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-md-2 d-block d-lg-none mt-2 text-center">
+      <li class="nav-item">
+        <%= link_to Project.name.pluralize, projects_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Settings', settings_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Billing', billing_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Logout', destroy_user_session_path, class: 'nav-link', method: :delete %>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto d-none d-lg-inline-block list-inline">
+      <li class="nav-item list-inline-item">
+        <%= link_to Project.name.pluralize, projects_path, class: 'btn btn-sm btn-outline-primary mr-2' %>
+      </li>
+
+      <li class="nav-item list-inline-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= image_tag current_user.avatar_url, width: 20, height: 20, class: 'rounded mr-1', alt: current_user %>
+          <%= current_user.to_s %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to 'Settings', settings_path, class: 'dropdown-item' %>
+          <%= link_to 'Billing', billing_path, class: 'dropdown-item' %>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Logout', destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

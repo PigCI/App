@@ -1,0 +1,114 @@
+//
+// Palette
+//
+
+$primary:   #990E4C !default;
+$secondary: #FFC6D8 !default;
+$light:     #E9E8E9 !default;
+$dark:      #262124 !default;
+
+$green:     #57FBA6 !default;
+$red:       #FF6F6F !default;
+$yellow:    #FFF378 !default;
+$blue:      #68D5FA !default;
+
+$orange:    #FF9460 !default;
+$teal:      #B5ED54 !default;
+$indigo:    #878DFA !default;
+$purple:    #C098F0 !default;
+$pink:      #FF8CBA !default;
+$cyan:      #98ffff !default;
+
+$white:     #fff !default;
+$gray:      #E9E8E9 !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-validation-icons:                     false !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   $gray;
+$body-color:                $dark;
+
+//
+// Typography
+//
+
+$font-family-serif:      "Eczar", serif;
+$font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace:  "Anonymous Pro", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$font-size-base:              1.15rem !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+//
+// Buttons + Forms
+//
+
+$input-btn-padding-x: 1.25rem !default;
+$input-btn-padding-y: 1rem !default;
+$input-btn-font-size: 1.1rem !default;
+$input-btn-line-height: 1 !default;
+
+/* Button Small */
+$input-btn-padding-x-sm: 0.75rem !default;
+$input-btn-padding-y-sm: 0.5rem !default;
+$input-btn-line-height-sm: 1 !default;
+
+//
+// Spacing
+//
+
+$spacer: 0.5rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: $spacer,
+    2: ($spacer * 2),
+    3: ($spacer * 3),
+    4: ($spacer * 4),
+    5: ($spacer * 5),
+    6: ($spacer * 6), // section bottom
+    7: ($spacer * 7),
+    8: ($spacer * 8),
+    9: ($spacer * 9),
+    10: ($spacer * 10),
+    11: ($spacer * 11),
+    12: ($spacer * 12) // section top
+  ),
+  $spacers
+);
+
+$section-padding-top:    spacer(12) !default;
+$section-padding-bottom: spacer(6) !default;
+
+//
+// Navbar
+//
+
+$navbar-padding-top:    spacer(4) !default;
+$navbar-padding-bottom: spacer(3) !default;
+$navbar-padding-x:      spacer(0) !default;
+$navbar-light-color: $body-color;
+
+
+//
+// Jumbotron
+// 
+
+$jumbotron-bg: $white !default;
+
+
+//
+// Cards
+//
+
+$card-spacer-x: spacer(3) !default;

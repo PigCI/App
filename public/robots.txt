@@ -1,0 +1,4 @@
+Sitemap: https://pigci.com/sitemap.txt
+
+User-agent: *
+Allow: /

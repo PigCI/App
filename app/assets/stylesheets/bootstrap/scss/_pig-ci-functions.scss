@@ -1,0 +1,8 @@
+// Spacer
+@function spacer($key) {
+  @return map-get($spacers, $key);
+}
+
+@function hex_to_rgb($hex) {
+  @return rgba($hex, 0.99)
+}

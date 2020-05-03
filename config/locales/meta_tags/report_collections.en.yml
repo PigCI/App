@@ -1,0 +1,5 @@
+en:
+  meta_tags:
+    report_collections:
+      show:
+        title: '%{report_collection} - %{project}'
