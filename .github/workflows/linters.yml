@@ -2,34 +2,27 @@
 name: Linters
 
 on:
-  pull_request:
-    branches: [ master ]
+  push:
+    branches-ignore:
+      - master
 
 jobs:
+  # https://github.com/github/super-linter
+  super_linter:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Lint Code Base
+        uses: docker://github/super-linter:v2.1.0
+
+  # https://github.com/devmasx/brakeman-linter-action
   brakeman:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Brakeman
-      uses: devmasx/brakeman-linter-action@v1.0.0
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  dotenv:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: dotenv-linter
-      uses: wemake-services/dotenv-linter@0.1.5
-      with:
-        reporter: 'github-pr-review'
-        options: '.env.sample'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  rubocop:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Rubocop Linter Action
-      uses: andrewmcodes/rubocop-linter-action@v3.1.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Brakeman
+        uses: devmasx/brakeman-linter-action@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
