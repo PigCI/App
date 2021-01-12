@@ -16,6 +16,16 @@ Hopefully you find looking through the code useful! If you'd like to get contact
 6. Run `bin/setup`
 7. Run `bundle exec rails s` & `bundle exec sidekiq`
 
+### Docker
+
+If you'd like to quickly get setup to preview the app, you can also run:
+
+```bash
+$ docker-compose build
+$ docker-compose run --rm web bin/setup
+$ docker-compose up
+```
+
 ## Stack Notes
 
 I had a fairly normal stack for a Rails project:
@@ -90,3 +100,9 @@ aws:
   access_key_id: XXXXXXXXXXXXXXXXXXXX
   secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/325384/104367821-3c56e780-5513-11eb-9896-ec90b745e835.png)
+
+![image](https://user-images.githubusercontent.com/325384/104367912-55f82f00-5513-11eb-8123-037ed4dd576f.png)
