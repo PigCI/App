@@ -93,6 +93,7 @@ COPY .ruby-version /usr/src/app
 COPY Gemfile.lock /usr/src/app
 
 # Install Ruby Gems
+RUN gem install bundler:2.0.2
 RUN bundle config set deployment 'true' \
       && bundle config set without 'development:test' \
       && bundle check || bundle install --jobs=$(nproc)
