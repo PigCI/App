@@ -77,6 +77,7 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/bin:$PATH
 
 RUN gem install bundler:2.2.5
+RUN bundle config set jobs 4
 
 # Define the user running the container
 USER appuser
