@@ -285,11 +285,11 @@ GEM
       actionmailer (>= 3)
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (4.0.4)
-    puma (4.3.3)
+    puma (4.3.7)
       nio4r (~> 2.0)
-    puma-ngrok-tunnel (1.0.0)
+    puma-ngrok-tunnel (1.1.0)
       ngrok-tunnel (~> 2.1, >= 2.1.1)
-      puma (>= 3, < 5)
+      puma (>= 3, < 6)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     raabro (1.1.6)
@@ -541,4 +541,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.0.2
+   2.2.5
