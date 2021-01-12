@@ -58,9 +58,6 @@ ARG GROUP_ID=${GROUP_ID:-1000}
 RUN addgroup -g $USER_ID -S appgroup \
       && adduser -u $GROUP_ID -S appuser -G appgroup
 
-# Install multiple gems at the same time
-RUN bundle config set jobs $(nproc)
-
 # Create app directory in the conventional /usr/src/app
 RUN mkdir -p /usr/src/app \
       && mkdir -p /usr/src/app/node_modules \
