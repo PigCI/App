@@ -1,4 +1,4 @@
-FROM ruby:2.7.2-alpine AS builder
+FROM ruby:2.6.6-alpine AS builder
 LABEL maintainer="Mike Rogers <me@mikerogers.io>"
 
 RUN apk --no-cache add --virtual build-dependencies \
