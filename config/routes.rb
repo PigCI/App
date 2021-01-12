@@ -59,11 +59,7 @@ Rails.application.routes.draw do
     get '', to: 'landing#index'
   end
 
-  if Rails.env.development?
-    constraints subdomain: 'style' do
-      mount MountainView::Engine => '/'
-    end
-  end
+  mount MountainView::Engine => '/styleguide'
 
   root to: redirect("https://#{ENV['URL']}")
 end
